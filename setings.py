@@ -1,16 +1,16 @@
 #Выбор браузера
 
-# Browser_name = 'CHROME'
-Browser_name = 'FIREFOX'
+Browser_name = 'CHROME'
+# Browser_name = 'FIREFOX'
 
 #Выбор ОС
 
-Platform_name = 'LINUX'
-# Platform_name = 'WINDOWS'
+# Platform_name = 'LINUX'
+Platform_name = 'WINDOWS'
 
 
 # РЕЖИМ БЕЗ ПОДНЯТИЯ (!!!!ОБЯЗАТЕЛЬНЫЙ ДЛЯ LINUX!!!!)
-HEADLESS_MODE = 1
+HEADLESS_MODE = 0
 
 HUB_ADDRESS = 'http://192.168.123.168:4444'
 
