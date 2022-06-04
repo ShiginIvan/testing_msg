@@ -1,12 +1,11 @@
 import time
-
 from pages.LoginPage import ActionLogin
 from pages.LoginPage import CheckLogin
 from pages.MainPage import CheckMain
 import pytest
 import allure
 from allure_commons.types import AttachmentType
-import setings
+import settings
 
 @allure.title('Проверка сообщения: Неверная учетная запись или пароль при неуспешной авторизации с неверным паролем')
 @allure.severity(allure.severity_level.MINOR)
@@ -18,7 +17,7 @@ def test_wrong_password(browser, login, password):
     time.sleep(1)
     login_page = CheckLogin(browser)
     message = login_page.check_wrong_login_message()
-    if setings.Platform_name == 'LINUX':
+    if settings.Platform_name == 'LINUX':
         assert 'Bad credentials' in message, allure.attach(browser.get_screenshot_as_png(), name="FAILED", attachment_type=AttachmentType.PNG)
     else:
         assert 'Неверная учетная запись или пароль' in message, allure.attach(browser.get_screenshot_as_png(), name="FAILED", attachment_type=AttachmentType.PNG)
@@ -33,7 +32,7 @@ def test_wrong_login(browser, login, password):
     time.sleep(1)
     login_page = CheckLogin(browser)
     message = login_page.check_wrong_login_message()
-    if setings.Platform_name == 'LINUX':
+    if settings.Platform_name == 'LINUX':
         assert 'Bad credentials' in message, allure.attach(browser.get_screenshot_as_png(), name="FAILED", attachment_type=AttachmentType.PNG)
     else:
         assert 'Неверные учетные данные пользователя' in message, allure.attach(browser.get_screenshot_as_png(), name="FAILED", attachment_type=AttachmentType.PNG)

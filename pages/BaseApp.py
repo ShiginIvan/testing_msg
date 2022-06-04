@@ -3,7 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 import allure
 from allure_commons.types import AttachmentType
-import setings
+import settings
 
 class BasePage:
     def __init__(self, driver):

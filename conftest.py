@@ -1,11 +1,11 @@
-import setings
+import settings
 import pytest
 from selenium import webdriver
 
-NameBrowser = setings.Browser_name
-NamePlatform = setings.Platform_name
-HeadlessMode = setings.HEADLESS_MODE
-HubAddress = setings.HUB_ADDRESS
+NameBrowser = settings.Browser_name
+NamePlatform = settings.Platform_name
+HeadlessMode = settings.HEADLESS_MODE
+HubAddress = settings.HUB_ADDRESS
 
 def capabalilty_browsers(NameBrowser, NamePlatform):
     if NameBrowser == 'FIREFOX' and NamePlatform == 'WINDOWS':
@@ -18,7 +18,7 @@ def capabalilty_browsers(NameBrowser, NamePlatform):
         capability = {'browserName': 'chrome', 'platform': 'LINUX'}
     return capability
 
-def option_brow(webdriver, HeadlessMode, NameBrowser):
+def option_browsers(webdriver, HeadlessMode, NameBrowser):
     if NameBrowser == 'FIREFOX' and HeadlessMode == 1:
         options_browser = webdriver.FirefoxOptions()
         options_browser.add_argument('--headless')
@@ -45,7 +45,7 @@ def option_brow(webdriver, HeadlessMode, NameBrowser):
 def browser():
     driver = webdriver.Remote(command_executor=(HubAddress + '/wd/hub'),
                               desired_capabilities=capabalilty_browsers(NameBrowser, NamePlatform),
-                              options=option_brow(webdriver, HeadlessMode, NameBrowser))
+                              options=option_browsers(webdriver, HeadlessMode, NameBrowser))
     yield driver
     driver.quit()
 

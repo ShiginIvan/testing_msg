@@ -5,12 +5,12 @@ Browser_name = 'CHROME'
 
 #Выбор ОС
 
-# Platform_name = 'LINUX'
-Platform_name = 'WINDOWS'
+Platform_name = 'LINUX'
+# Platform_name = 'WINDOWS'
 
 
 # РЕЖИМ БЕЗ ПОДНЯТИЯ (!!!!ОБЯЗАТЕЛЬНЫЙ ДЛЯ LINUX!!!!)
-HEADLESS_MODE = 0
+HEADLESS_MODE = 1
 
 HUB_ADDRESS = 'http://192.168.123.168:4444'
 
