@@ -21,10 +21,10 @@ class ActionDepartment(BasePage):
         field_name.send_keys(name)
         field_name.send_keys(Keys.ENTER)
 
-    def delete_department(self, browser):
+    def delete_department(self):
         button_delete = self.find_element(SearchLocators.button_delete)
         button_delete.click()
         button_delete_madal = self.find_element(SearchLocators.button_delete_madal)
-        test_1 = ActionChains(browser).move_to_element(button_delete_madal).click(button_delete_madal)
+        test_1 = ActionChains(self.driver).move_to_element(button_delete_madal).click(button_delete_madal)
         time.sleep(1)
         test_1.perform()

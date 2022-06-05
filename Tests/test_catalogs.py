@@ -26,7 +26,7 @@ def test_create_departments(browser, code, name):
     departmets_page = ActionDepartments(browser)
     departmets_page.open_new_department()
     departmet_page = ActionDepartment(browser)
-    departmet_page.delete_department(browser)
+    departmet_page.delete_department()
     departmets_page = CheckDepartments(browser)
     check_delete = departmets_page.check_not_found_department()
     assert 'Не найдено ни одного подразделения' in check_delete, allure.attach(browser.get_screenshot_as_png(), name="FAILED", attachment_type=AttachmentType.PNG)
